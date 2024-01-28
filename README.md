@@ -1,12 +1,9 @@
-THIS README IS TEMPORARY AND RIPPED STRAIGHT FROM
-BASTIONCMD's UI.CTICF FILE!! REPLACE LATER!!!
-                
-                
-                
-                Yo, this is our own format!
+# CTICF File Format
 
-  Short explanation:
-  
+CTICF (aka. Text Indexing and Coloring Format) is a file format for managing strings and colors for your CLI.
+Here's a short explanation:
+
+```
     $$ : Text gets inserted by the program here
     
     §§[r|g|y|b|m|c|w,0][d|n|b][f,b] : The text color will
@@ -54,3 +51,4 @@ BASTIONCMD's UI.CTICF FILE!! REPLACE LATER!!!
   last hashtag will get read!
 
 #
+```
