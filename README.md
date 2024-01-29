@@ -1,6 +1,8 @@
 <h1 align="center">CTICF Filetype</h1>
 <p align="center"><strong>Our file format CTICF (Console Text Indexing & Coloring Format), specifically made for Python Console Applications to manage their text UI in one singular file, and also add color to it.</strong></p>
 
+This format was made specifically for [BastionCMD](https://www.github.com/BastionMC/BastionCMD), but you can use it in any of your own programs! It's in plain-text, so you don't need to worry about writing the files in any special programs.
+
 ```
     $$ : Text gets inserted by the program here
     
