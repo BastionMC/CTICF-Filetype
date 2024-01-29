@@ -1,5 +1,5 @@
 <h1 align="center">CTICF Filetype</h1>
-<p align="center"><strong>The build tool for adding new content to MCWebGUI.</strong></p>
+<p align="center"><strong>Our file format CTICF (Console Text Indexing & Coloring Format), specifically made for Python Console Applications to manage their text UI in one singular file, and also add color to it.</strong></p>
 
 ```
     $$ : Text gets inserted by the program here
