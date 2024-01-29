@@ -3,52 +3,66 @@
 
 This format was made specifically for [BastionCMD](https://www.github.com/BastionMC/BastionCMD), but you can use it in any of your own programs! It's in plain-text, so you don't need to worry about writing the files in any special programs.
 
+<h1 align="center"><img image-rendering="pixelated" height="24px" width="24px" src="graphics/Installation.png">Installation</h1>
+
+1. Select the `cticf.py` file from the source of the latest release.
+2. Put the file in the same folder as your main Python file.
+3. Import `cticf`:
+```py
+import cticf
 ```
-    $$ : Text gets inserted by the program here
-    
-    §§[r|g|y|b|m|c|w,0][d|n|b][f,b] : The text color will
-                                        be changed by this!
-    
-        [red,green,yellow,blue,magenta,cyan,white,black]
-        [dim,normal,bright]
-        [foreground,background]
-        
-        (Only pick one of the letters in
-        the list! For sample "§§rnf"!)
-        
-    §$ : Reset text color
-    
-    $§ : Split text segments
+6. **You're done, the setup process is complete.**
 
- ──────────────────────────────────────────────────────────────
+<h1 align="center"><img image-rendering="pixelated" height="24px" width="24px" src="graphics/How_to_use.png">How to use</h1>
+Here's how you can write in this format, and how to use it. Almost everything you want to know is explained here.
 
-     Texts are referred to by index! If you add anything,
-     please do that at the bottom! It saves a lot of time,
-     trust me.
-     
-     There is a chance your syntax will get misread by the
-     interpreter. To avoid this, leave a space inbetween
-     each control-character-combination ($$,§§,§$,$§).
-     
-     The interpreter allows for unecessary whitespaces to
-     be inbetween the different strings, as it will get
-     trimmed. If you want the whitespace formatting, you
-     will have to do that through code, sorry.
-     
-     Please pay attention to the line length when adding
-     texts! To follow the style, use a maximum of 64 chars
-     per line!
+---
+
+**Formatting Characters**
+
+The formatting characters consist of the dollar sign, `$`, and the paragraph symbol, `§`. A combination of the two symbols is used for every formatting character combination. Here's all the combinations that you can use:
+
+1. $$ - This combination is used as an insertion point for text. It does not have any arguments.
+2. §§ - This combination is used for changing the text color. It has three arguments: the color, the brightness, and the ground. The color can be `r|g|y|b|m|c|w|0`, standing for red, green, yellow, blue, magenta, cyan, white & black. The brightness can be set to `d|n|b` (meaning dim, normal & bright). The ground is either the foreground or the background, so that's `f|b`.
+3. §$ - Reset's the text color back to the terminals default text color, if needed.
+4. $§ - Different strings get split at this character.
+   
+---
+
+**Comments**
+
+Guess what? You can comment the beginning of files! Just write a `#` in it's own seperate line to indicate that the actual file stuff starts from there.
  
- ──────────────────────────────────────────────────────────────
- 
-        https://www.github.com/BastionMC/CTICF-Filetype
- 
- ──────────────────────────────────────────────────────────────
+---
 
-  You can comment the beginning of files! Use a Hashtag to
-  indicate that the actual data is starting. Do not use it
-  multiple times in a file, or else only the parts after the
-  last hashtag will get read!
+**Reading a file**
 
-#
+Once you imported CTICF, reading a file is really easy. You can simply read a file with the following code:
+
+```py
+import cticf
+
+ui_strings = cticf.rfile("path/to/file.cticf")
+ui_string = ui_strings[0]
+
+print(ui_string)
 ```
+
+This function will return a list with all of your formated strings. You can just print the strings, and they should be formatted. If you want to insert text, the following how-to might be helpful to you:
+
+---
+
+**Inserting text**
+
+After you've read a file, you can insert text into one of the indexed strings, and print that string to the console:
+
+```py
+import cticf
+
+ui_strings = cticf.rfile("path/to/file.cticf")
+ui_string = ui_strings[0]
+ui_string = cticf.inserts(ui_string, "Hello World!")
+
+print(ui_string)
+```
+
