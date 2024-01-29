@@ -1,7 +1,5 @@
-# CTICF File Format
-
-CTICF (aka. Text Indexing and Coloring Format) is a file format for managing strings and colors for your CLI.
-Here's a short explanation:
+<h1 align="center">CTICF Filetype</h1>
+<p align="center"><strong>The build tool for adding new content to MCWebGUI.</strong></p>
 
 ```
     $$ : Text gets inserted by the program here
